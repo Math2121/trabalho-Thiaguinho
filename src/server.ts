@@ -31,7 +31,7 @@ class Pessoa {
         this._sexo = sexo;
         break;
       default:
-        throw new Error("Inválido!");
+        throw new Error("Sexo Inválido!");
     }
   }
 
@@ -51,11 +51,11 @@ class Pessoa {
 
 const people1 = new Pessoa("Matheus", "Masculino", 20);
 
-//console.log(people1.nome = '')
-
-//console.log(people1.idade = 12)
-//console.log((people1.sexo = "golfino"));
-
+// console.log(people1.nome = '')
+people1.idade = -20
+console.log(people1)
+// console.log((people1.sexo = "golfino"));
+// console.log(people1)
 /*2) Crie uma classe Veiculos com os atributos modelo, marca, ano, valorLocacao e
 quantidade de dias. Crie os getters e setters. No setters crie validações para não
 aceitar modelo, marca, ano, valorLocacao e quantidade em branco ou com valor
@@ -128,12 +128,12 @@ class Veiculos {
 // const carro = new Veiculos("Fiesta","Nissan",2015,125,6)
 // console.log(carro.passeio(5,600))
 
-try {
-  const carro = new Veiculos(" ", "Nissan", 2015, 125, 6);
-  carro.marca = "";
-} catch (error) {
-  console.log(error);
-}
+// try {
+//   const carro = new Veiculos(" ", "Nissan", 2015, 125, 6);
+//   carro.marca = "";
+// } catch (error) {
+//   console.log(error);
+// }
 
 /*3) Crie uma classe Fatura com os atributos números, descrição, quantidade
 Comprada e preço. Crie um método valor da Fatura para multiplicar a quantidade
@@ -179,8 +179,10 @@ class Fatura {
   }
 }
 
-const faturas = new Fatura(566, "Fatura nova", 65, 1200);
-console.log(faturas.valorFatura());
+// const faturas = new Fatura(566, "Fatura nova", 65, 1200);
+// console.log(faturas.valorFatura());
+
+
 /*4) Crie uma classe para calcular o imposto de renda. Crie uma classe Pai com os
 atributos nome e renda anual. Crie os getters e setters com as suas validações. Crie
 uma classe filha Pessoa Física para herdar da classe Pai e com o atributo gastos
@@ -227,7 +229,7 @@ abstract class ImpostoDeRenda {
     this.nome = nome;
   }
   set setRenda(renda: number) {
-    if (renda == 0) {
+    if (renda == 0 || !renda) {
       throw new Error("Renda invalida!");
     }
     this.renda = renda;
@@ -432,14 +434,16 @@ class PessoaJuridica extends Vendedores {
   }
 }
 
-const vende = new Vendedores("Salomao", 50000, 300);
-console.log("Vendedores:" + vende.desconto());
-const pessoaFi = new VendedorFisico("Sudeste", "Salomao", 50000, 300);
-console.log("Pessoa Física:" + pessoaFi.comissao());
-console.log("Pessoa Física:" + pessoaFi.salarioTotal());
-const pessoaJuridica = new PessoaJuridica("Maria", 60, "Salomao", 50000, 300);
-console.log("PEssoa Juridica " + pessoaJuridica.comissao());
-console.log("PEssoa Juridica " + pessoaJuridica.salarioTotal());
+// const vende = new Vendedores("Salomao", 50000, 300);
+// console.log("Vendedores:" + vende.desconto());
+// const pessoaFi = new VendedorFisico("Sudeste", "Salomao", 50000, 300);
+// console.log("Pessoa Física:" + pessoaFi.comissao());
+// console.log("Pessoa Física:" + pessoaFi.salarioTotal());
+// const pessoaJuridica = new PessoaJuridica("Maria", 60, "Salomao", 50000, 300);
+// console.log("PEssoa Juridica " + pessoaJuridica.comissao());
+// console.log("PEssoa Juridica " + pessoaJuridica.salarioTotal());
+
+
 /*6) Crie uma interface chamado IEndereço com os seguintes atributos rua, numero,
 bairro e cidade. Crie um variável do endereço que seja do tipo da interface
 endereço. Atribua um endereço uma rua, numero, bairro e cidade para a variável
